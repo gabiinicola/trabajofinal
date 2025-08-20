@@ -1,0 +1,223 @@
+
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.edu-nsw-act {
+  font-family: "Edu NSW ACT Cursive", cursive;
+  font-weight: 500;
+  font-style: normal;
+}
+.edu-nsw-act p{
+  font-family: Arial, Helvetica, sans-serif, cursive;
+  font-weight: 500;
+  font-style: normal;
+}
+
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  z-index: 9999;
+  animation: fadeInPage 1.8s forwards;
+}
+
+@keyframes fadeInPage {
+  from { opacity: 1; }
+  to { opacity: 0; visibility: hidden; }
+}
+
+section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+  box-sizing: border-box;
+}
+
+.inicio-video {
+  position: relative;
+  width: 100%;
+  color: white;
+}
+
+.inicio-video video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.9;
+}
+
+.inicio-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.inicio-content h1 {
+  font-size: 3rem;
+}
+
+.inicio-content p {
+  font-size: 1.7rem;
+}
+
+.scroll-down {
+  opacity: 0;
+  margin-top: 20px;
+  animation: fadeUp 1s forwards;
+  animation-delay: 3s;
+}
+
+.scroll-down.visible {
+  opacity: 1;
+}
+
+.down-arrow {
+  font-size: 2rem;
+  color: white;
+  margin-top: 10px;
+  animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+  from { transform: translateY(0); }
+  to { transform: translateY(15px); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.navbar {
+  background-color: #4c683f;
+  height: 55px;
+}
+
+.navbar .navbar-brand {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.navbar .nav-link {
+  transition: transform 0.3s ease, color 0.3s ease;
+  color: white;
+}
+
+.navbar .nav-link:hover {
+  transform: scale(1.2) translateY(-3px);
+  color: #33DBA7;
+}
+
+.navbar .nav-link.active {
+  animation: colorShift 4s infinite alternate;
+  transform: scale(1.2) translateY(-3px);
+  font-weight: bold;
+}
+
+@keyframes colorShift {
+  0%   { color: #33DBA7; }
+  25%  { color: #7ED957; }
+  50%  { color: #ff4800; }
+  75%  { color: #7bff00; }
+  100% { color: #00f7ff; }
+}
+
+.navbar a i,
+footer a i {
+  display: inline-block;
+  transition: transform 0.3s ease, color 0.3s ease;
+  color: white;
+}
+
+.navbar a:hover i,
+footer a:hover i {
+  transform: scale(1.3) translateY(-5px);
+  color: #33DBA7;
+}
+
+footer {
+  background-color: #4c683f;
+}
+
+footer a {
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #d4f8d4;
+}
+
+#catalogo {
+  background: linear-gradient(to right, white 0%, #f0f0f0 10%, #52853b 50%, #f0f0f0 90%, white 100%);
+  width: 100%;
+  min-height: 100vh;
+  
+}
+
+.text-center {
+    font-family:"Edu NSW ACT Cursive";
+    
+    
+}
+
+#sobre {
+  background: linear-gradient(to bottom, #ffffff 0%, rgb(212, 212, 212) 100%);
+  width: 100%;
+  min-height: 100vh;
+}
+#sobre h2 {
+    font-family:"Edu NSW ACT Cursive";
+}
+
+#blog {
+  background: linear-gradient(to right, white 0%, #f0f0f0 10%, rgb(235, 235, 235) 50%, #f0f0f0 90%, white 100%);
+  width: 100%;
+  min-height: 100vh;
+  scroll-margin-top: 50px;
+}
+
+#contacto {
+  background: #ffffff;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  background-size: 50%, 50%;
+}
+
+
+.logo-navbar {
+  height: 50px; 
+  width: auto;
+  transform: translateX(-50px);
+  object-fit: contain;
+}
+
+.logo-footer {
+  height: 70px; 
+  width: auto;
+}
+
+.navbar .d-flex {
+  align-items: center; 
+  gap: 10px; 
+}
