@@ -4,26 +4,20 @@
   <meta charset="UTF-8">
   <title>Vivero Carina Paraná</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <link href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&display=swap" rel="stylesheet">
-
-
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body data-bs-spy="scroll" data-bs-target="#menu" data-bs-offset="70">
+<body style="position: relative;">
 
 <div class="overlay"></div>
 
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
   <div class="container-fluid">
 
-    <a class="navbar-brand" href="#inicio">Vivero Carina Paraná</a>
+    <a class="navbar-brand" href="#inicio">Vivero Carina</a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
       <span class="navbar-toggler-icon"></span>
@@ -31,14 +25,7 @@
 
     <div class="collapse navbar-collapse" id="menu">
 
-      <div class="d-flex ms-auto me-3 align-items-center">
-        <img src="footage/imagenes/logo.png" class="logo-navbar" alt="Logo">
-        <a href="https://www.facebook.com" target="_blank" class="ms-2"><i class="fab fa-facebook"></i></a>
-        <a href="https://www.instagram.com/viverocarinaparana/" target="_blank" class="ms-2"><i class="fab fa-instagram"></i></a>
-        <a href="https://wa.me/543434657056" target="_blank" class="ms-2"><i class="fab fa-whatsapp"></i></a>
-      </div>
-
-      <ul class="navbar-nav ms-auto">
+      <ul class="navbar-nav">
         <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
         <li class="nav-item"><a class="nav-link" href="#catalogo">Catálogo</a></li>
         <li class="nav-item"><a class="nav-link" href="#sobre">Sobre Nosotros</a></li>
@@ -46,30 +33,36 @@
         <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
       </ul>
 
+      <div class="navbar-social">
+        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/viverocarinaparana/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/543434657056" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      </div>
+
     </div>
   </div>
 </nav>
-
-
 
 <section id="inicio" class="inicio-video">
   <video autoplay muted loop playsinline>
     <source src="footage/videos/background.mp4" type="video/mp4">
     Tu navegador no soporta videos.
   </video>
+  <video class="logo" autoplay loop muted playsinline>
+    <source src="footage/videos/logoblanco.webm" type="video/webm">
+  </video>
 
   <div class="inicio-content edu-nsw-act">
-    <h1>Bienvenidos al Vivero Carina Paraná</h1>
+    <h1>Bienvenidos al Vivero Carina </h1>
     <p>Tu espacio verde en Paraná</p>
 
     <div class="scroll-down hidden">
       <p>¿Querés ver más?</p>
       <button id="btnScroll" class="btn btn-success">Ir al catálogo</button>
-      <div class="down-arrow">&#8595;</div>
+      <div class="down-arrow">↓</div>
     </div>
   </div>
 </section>
-
 
 <section id="catalogo" class="container py-5 catalogo-bg">
   <h2 class="text-center mb-4">Catálogo de Productos</h2>
@@ -151,75 +144,153 @@
   </div>
 </section>
 
-
-
 <section id="sobre" class="sobre-bg py-5">
   <div class="container">
     <div class="row align-items-center">
 
-      <div class="col-md-6 mb-4">
-        <img src="footage/imagenes/imgvivero.png" class="img-fluid rounded shadow-sm">
+      <div class="col-lg-3 mb-4 mb-lg-0">
+        <div id="carouselSobre" class="carousel slide shadow-lg rounded overflow-hidden" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="3000">
+              <img src="footage/imagenes/SN2.png" class="d-block w-100" alt="Vivero Carina">
+            </div>
+            <div class="carousel-item" data-bs-interval="3000">
+              <img src="footage/imagenes/SNC1.jpg" class="d-block w-100" alt="Plantas Variadas">
+            </div>
+            <div class="carousel-item" data-bs-interval="3000">
+              <img src="footage/imagenes/SNC3.jpg" class="d-block w-100" alt="Naturaleza">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselSobre" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselSobre" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+          </button>
+        </div>
       </div>
 
-      <div class="col-md-6">
-        <h2>Sobre Nosotros</h2>
-        <p>El Vivero Carina Paraná es un emprendimiento familiar fundado en 2022 con experiencia en el cultivo y cuidado de plantas. Nuestro objetivo es acercar la naturaleza a cada hogar, ofreciendo productos de calidad y un servicio personalizado.</p> <p>Nos enorgullece ser parte de la comunidad de Paraná, brindando asesoramiento y compartiendo nuestra pasión por el mundo verde.
+      <div class="col-lg-4">
+        <h2 class="mb-3">Sobre Nosotros</h2>
+        <p class="lead">
+          Nuestra historia es una de <strong>reinvención y familia</strong>. Hasta el 2022, nuestra casa fue punto de encuentro de muchos vecinos gracias a nuestro kiosco familiar. Sin embargo, cuando la pandemia y los gastos nos obligaron a cerrar esa etapa, decidimos <strong>no bajar los brazos</strong>.
+        </p>
+        <p>
+          Con experiencia previa en el rubro y un profundo amor por la naturaleza, transformamos el final de un ciclo en un <strong>nuevo comienzo</strong>. Así nació <strong>Vivero Carina</strong>: una idea gestada en casa para seguir adelante, que hoy se dedica con pasión a llenar de vida y color los hogares de Paraná.
+        </p>
       </div>
+
+      <div class="col-lg-5 text-center mt-4 mt-lg-0 d-none d-lg-block">
+         <video class="logo-static" autoplay loop muted playsinline>
+            <source src="footage/videos/logo.webm" type="video/webm">
+         </video>
+      </div>
+
     </div>
   </div>
 </section>
-
-
 
 <section id="blog" class="blog-bg container py-5">
   <h2 class="text-center mb-4">Consejos y Blog</h2>
 
-  <div class="row g-4">
+  <div class="row g-4 d-none d-md-flex">
 
-<div class="col-md-4">
-  <div class="card h-100 shadow-sm">
-    <video class="card-img-top" autoplay muted loop playsinline>
-      <source src="footage/videos/regar.mp4" type="video/mp4">
-    </video>
-    <div class="card-body">
-      <h5>Cómo regar correctamente</h5>
-      <p>Evitar exceso de agua.</p>
-      <a href="https://www.youtube.com/watch?v=pPGkXWtpzck" class="btn btn-success">Leer más</a>
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <video class="card-img-top" autoplay muted loop playsinline>
+          <source src="footage/videos/regar.mp4" type="video/mp4">
+        </video>
+        <div class="card-body">
+          <h5>Cómo regar correctamente</h5>
+          <p>Evitar exceso de agua.</p>
+          <a href="https://www.youtube.com/watch?v=pPGkXWtpzck" class="btn btn-success">Leer más</a>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-<div class="col-md-4">
-  <div class="card h-100 shadow-sm">
-    <video class="card-img-top" autoplay muted loop playsinline>
-      <source src="footage/videos/interior.mp4" type="video/mp4">
-    </video>
-    <div class="card-body">
-      <h5>Plantas de interior</h5>
-      <p>Ideales para poca luz.</p>
-      <a href="https://www.youtube.com/watch?v=YnaGmLv-oVY" class="btn btn-success">Leer más</a>
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <video class="card-img-top" autoplay muted loop playsinline>
+          <source src="footage/videos/interior.mp4" type="video/mp4">
+        </video>
+        <div class="card-body">
+          <h5>Plantas de interior</h5>
+          <p>Ideales para poca luz.</p>
+          <a href="https://www.youtube.com/watch?v=YnaGmLv-oVY" class="btn btn-success">Leer más</a>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-<div class="col-md-4">
-  <div class="card h-100 shadow-sm">
-    <video class="card-img-top" autoplay muted loop playsinline>
-      <source src="footage/videos/maceta.mp4" type="video/mp4">
-    </video>
-    <div class="card-body">
-      <h5>Elegí la maceta perfecta</h5>
-      <p>Según tamaño de planta.</p>
-      <a href="https://www.youtube.com/watch?v=wvXha7Uy88I" class="btn btn-success">Leer más</a>
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <video class="card-img-top" autoplay muted loop playsinline>
+          <source src="footage/videos/maceta.mp4" type="video/mp4">
+        </video>
+        <div class="card-body">
+          <h5>Elegí la maceta perfecta</h5>
+          <p>Según tamaño de planta.</p>
+          <a href="https://www.youtube.com/watch?v=wvXha7Uy88I" class="btn btn-success">Leer más</a>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-
 
   </div>
+
+  <div id="blogCarousel" class="carousel slide d-md-none" data-bs-ride="carousel">
+    <div class="carousel-inner">
+
+      <div class="carousel-item active">
+        <div class="card h-100 shadow-sm">
+          <video class="card-img-top" autoplay muted loop playsinline>
+            <source src="footage/videos/regar.mp4" type="video/mp4">
+          </video>
+          <div class="card-body">
+            <h5>Cómo regar correctamente</h5>
+            <p>Evitar exceso de agua.</p>
+            <a href="https://www.youtube.com/watch?v=pPGkXWtpzck" class="btn btn-success">Leer más</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="card h-100 shadow-sm">
+          <video class="card-img-top" autoplay muted loop playsinline>
+            <source src="footage/videos/interior.mp4" type="video/mp4">
+          </video>
+          <div class="card-body">
+            <h5>Plantas de interior</h5>
+            <p>Ideales para poca luz.</p>
+            <a href="https://www.youtube.com/watch?v=YnaGmLv-oVY" class="btn btn-success">Leer más</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="card h-100 shadow-sm">
+          <video class="card-img-top" autoplay muted loop playsinline>
+            <source src="footage/videos/maceta.mp4" type="video/mp4">
+          </video>
+          <div class="card-body">
+            <h5>Elegí la maceta perfecta</h5>
+            <p>Según tamaño de planta.</p>
+            <a href="https://www.youtube.com/watch?v=wvXha7Uy88I" class="btn btn-success">Leer más</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#blogCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#blogCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+
 </section>
-
-
 
 <section id="contacto" class="contacto-bg py-5">
   <div class="container">
@@ -227,7 +298,7 @@
 
     <div class="row g-4">
       <div class="col-md-6">
-        <form action="https://formspree.io/f/mgvzjadj" method="POST">
+        <form id="contactForm" action="https://formspree.io/f/mgvzjadj" method="POST" novalidate>
           <input type="text" class="form-control mb-3" name="name" placeholder="Nombre" required>
           <input type="email" class="form-control mb-3" name="email" placeholder="Correo" required>
           <textarea class="form-control mb-3" name="message" rows="4" placeholder="Mensaje" required></textarea>
@@ -252,13 +323,13 @@
 
 <footer class="footer-custom text-white py-4">
   <div class="container text-center">
-    <img src="footage/imagenes/logo.png" class="logo-footer mb-2">
+    
     <div>
       <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook fa-lg"></i></a>
       <a href="https://www.instagram.com/viverocarinaparana/" target="_blank"><i class="fab fa-instagram fa-lg"></i></a>
       <a href="https://wa.me/543434657056" target="_blank"><i class="fab fa-whatsapp fa-lg"></i></a>
     </div>
-    <p class="mt-2">&copy; 2025 Vivero Carina Paraná</p>
+    <p class="mt-2">© 2025 Vivero Carina Paraná</p>
   </div>
 </footer>
 
