@@ -2,6 +2,7 @@ body {
     margin: 0;
     font-family: 'Helvetica', 'Arial', sans-serif;
     font-weight: 400;
+    overflow-x: hidden;
 }
 
 p, li, span, a {
@@ -105,7 +106,8 @@ section {
 
 .navbar {
     background-color: #4c683f;
-    height: 55px;
+    height: 60px;
+    padding: 0 15px;
 }
 
 .navbar-brand {
@@ -113,13 +115,35 @@ section {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 9999;
+    z-index: 1050;
+    margin: 0;
+    font-size: 1.5rem;
     animation: brandPulse 2s ease infinite alternate;
 }
 
 @keyframes brandPulse {
     from { transform: translate(-50%, -50%) scale(1); }
     to { transform: translate(-50%, -50%) scale(1.05); }
+}
+
+.navbar-collapse {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.navbar-nav {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.navbar-nav .nav-item {
+    margin-right: 20px;
 }
 
 .navbar .nav-link {
@@ -129,25 +153,34 @@ section {
 
 .navbar .nav-link:hover {
     transform: scale(1.2);
-    color: #33DBA7;
+    color: #c9ff05;
 }
 
-.navbar .d-flex a {
+.navbar-social {
+    display: flex;
+    gap: 30px;
+    margin-left: 0;
+    padding-right: 280px;
+}
+
+.navbar-social a {
+    display: inline-block;
     border-radius: 50%;
     padding: 6px;
-    color: yellow;
+    color: #c9ff05;
     background: none;
     transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+    font-size: 1.8rem;
 }
 
-.navbar .d-flex a:hover {
+.navbar-social a:hover {
     transform: scale(1.25);
     filter: brightness(1.2);
 }
 
-.navbar .d-flex a:hover .fa-facebook { color: #1877f2; box-shadow: 0 0 14px rgba(24, 119, 242, 0.8); }
-.navbar .d-flex a:hover .fa-instagram { color: #e1306c; box-shadow: 0 0 14px rgba(225, 48, 108, 0.8); }
-.navbar .d-flex a:hover .fa-whatsapp { color: #25d366; box-shadow: 0 0 14px rgba(37, 211, 102, 0.8); }
+.navbar-social a:hover .fa-facebook { color: #1877f2; box-shadow: 0 0 14px rgba(24, 119, 242, 0.8); }
+.navbar-social a:hover .fa-instagram { color: #e1306c; box-shadow: 0 0 14px rgba(225, 48, 108, 0.8); }
+.navbar-social a:hover .fa-whatsapp { color: #25d366; box-shadow: 0 0 14px rgba(37, 211, 102, 0.8); }
 
 footer {
     background-color: #4c683f;
@@ -156,11 +189,12 @@ footer {
 footer a {
     display: inline-block;
     border-radius: 50%;
-    padding: 8px;
+    padding: 6px;
     margin: 0 6px;
-    color: yellow;
+    color: #c9ff05;
     background: none;
     transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+    font-size: 1.8rem;
 }
 
 footer a:hover {
@@ -216,7 +250,6 @@ footer a:hover .fa-whatsapp { color: #25d366; box-shadow: 0 0 14px rgba(37, 211,
 
 #catalogoCarousel {
     position: relative;
-    height: 580px;
     display: flex;
     align-items: center;
 }
@@ -235,7 +268,7 @@ footer a:hover .fa-whatsapp { color: #25d366; box-shadow: 0 0 14px rgba(37, 211,
 }
 
 #catalogoCarousel .card img {
-    height: 320px;
+    height: 400px;
     object-fit: cover;
 }
 
@@ -268,44 +301,63 @@ footer a:hover .fa-whatsapp { color: #25d366; box-shadow: 0 0 14px rgba(37, 211,
 #catalogoCarousel .carousel-item-prev { filter: blur(1.2px); }
 
 @media (max-width: 991px) {
+    #catalogoCarousel {
+        height: 780px !important;
+        padding-bottom: 0;
+    }
+    
+    #catalogoCarousel .card img {
+        height: 200px !important;
+    }
+
     .navbar-collapse {
-        background: linear-gradient(120deg, #000, #0a3d2f, #000);
+        flex-direction: column;
+        justify-content: center;
+        background-color: #4c683f;
         padding: 20px 0;
         animation: fadeMenu 0.5s ease forwards;
-        backdrop-filter: blur(6px);
-    }
-
-    @keyframes fadeMenu {
-        from { opacity: 0; filter: blur(6px); }
-        to { opacity: 1; filter: blur(0); }
-    }
-
-    .navbar-nav {
-        width: 100%;
         text-align: center;
     }
 
-    .navbar-nav .nav-item { width: 100%; }
+    @keyframes fadeMenu {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+        align-items: center;
+    }
+
+    .navbar-nav .nav-item {
+        width: 100%;
+        margin-right: 0;
+        display: flex;
+        justify-content: center;
+    }
 
     .navbar-nav .nav-link {
         display: block;
         width: 100%;
         padding: 14px 0;
-        background: rgba(0,0,0,0.7);
+        background: transparent;
         color: #fff;
         border-bottom: 1px solid rgba(255,255,255,0.1);
         transition: all 0.35s ease;
     }
 
     .navbar-nav .nav-link:hover {
-        background: linear-gradient(120deg, #33DBA7, #1fa37c);
+        background: linear-gradient(120deg, #c9ff05, #a8d605);
         color: #000;
         transform: scale(1.04);
         letter-spacing: 1px;
     }
 
     .navbar-nav .nav-link.active {
-        background: linear-gradient(120deg, #33DBA7, #1fa37c);
+        background: linear-gradient(120deg, #c9ff05, #a8d605);
         color: #000;
     }
 
@@ -318,14 +370,28 @@ footer a:hover .fa-whatsapp { color: #25d366; box-shadow: 0 0 14px rgba(37, 211,
     .navbar-toggler:not(.collapsed) { transform: rotate(90deg); }
 
     .navbar .d-flex { justify-content: center; margin-bottom: 14px; }
+    
+    .navbar-social {
+        margin-top: 20px;
+        justify-content: center;
+        width: 100%;
+        gap: 30px;
+        padding-right: 0 !important;
+        margin-left: 0 !important;
+    }
+    
     .navbar-brand {
+        position: absolute;
         top: 50%;
+        left: 50%;
         transform: translate(-50%, -50%);
         animation: brandPulse 2s ease infinite alternate;
     }
 }
 
 @media (min-width: 992px) {
+    #catalogoCarousel { height: 700px; }
+    
     .navbar-nav .nav-link {
         position: relative;
         transition: color 0.4s ease;
@@ -333,24 +399,80 @@ footer a:hover .fa-whatsapp { color: #25d366; box-shadow: 0 0 14px rgba(37, 211,
 
     .navbar-nav .nav-link.active {
         color: #000 !important;
-        background: linear-gradient(120deg, #33DBA7, #1fa37c, #33DBA7);
+        background: linear-gradient(120deg, #c9ff05, #a8d605, #c9ff05);
         border-radius: 8px;
         padding: 6px 14px;
         animation: sectionGlow 1.5s ease infinite alternate;
     }
 
     @keyframes sectionGlow {
-        from { box-shadow: 0 0 5px rgba(0, 174, 255, 0.4); }
-        to { box-shadow: 0 0 18px rgba(1, 56, 39, 0.9); }
+        from { box-shadow: 0 0 5px rgba(201, 255, 5, 0.4); }
+        to { box-shadow: 0 0 18px rgba(162, 217, 4, 0.9); }
     }
 
-    #catalogoCarousel { height: auto; padding-bottom: 30px; }
     #catalogoCarousel .carousel-inner,
     #catalogoCarousel .carousel-item,
     #catalogoCarousel .row { height: auto; }
     #catalogoCarousel .card { height: auto; }
-    #catalogoCarousel .card img { height: 240px; }
+    #catalogoCarousel .card img { height: 400px; }
     .carousel-control-prev, .carousel-control-next { top: 45%; }
 }
 
 #catalogo, #blog { display: block; }
+
+#blog .card-img-top {
+    height: 600px;
+    object-fit: cover;
+}
+
+.logo {
+  transform-origin: center;
+  animation: logoZoom 3s ease-in-out infinite;
+}
+
+@keyframes logoZoom {
+  0% { transform: scale(0.42) translateY(-590px); }
+  50% { transform: scale(0.44) translateY(-590px); }
+  100% { transform: scale(0.42) translateY(-590px); }
+}
+
+@media (max-width: 768px) {
+  @keyframes logoZoom {
+    0% { transform: scale(0.75) translateY(-320px); }
+    50% { transform: scale(0.78) translateY(-320px); }
+    100% { transform: scale(0.75) translateY(-320px); }
+  }
+}
+
+#carouselSobre {
+    position: relative;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    transform: scale(1.05);
+}
+
+#carouselSobre .carousel-item img {
+    height: 550px;
+    
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    #carouselSobre .carousel-item img {
+        height: 350px;
+    }
+}
+
+#sobre p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-weight: 400;
+}
+
+.logo-static {
+    width: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    transform: scale(2);
+}
