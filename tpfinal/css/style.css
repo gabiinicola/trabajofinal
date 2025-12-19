@@ -428,8 +428,6 @@ footer a:hover .fa-whatsapp { color: #25d366; box-shadow: 0 0 14px rgba(37, 211,
 .logo {
   transform-origin: center;
   animation: logoZoom 3s ease-in-out infinite;
-  
-  mix-blend-mode: screen;
 }
 
 @keyframes logoZoom {
@@ -479,5 +477,6 @@ footer a:hover .fa-whatsapp { color: #25d366; box-shadow: 0 0 14px rgba(37, 211,
     transform: scale(2);
 
 }
+
 
 
